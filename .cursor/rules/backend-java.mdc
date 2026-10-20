@@ -1,0 +1,19 @@
+---
+description: FlowDesk Spring Boot — feature packages, DTOs, errors, tests
+globs: FlowDesk-Backend/**/*.java,FlowDesk-Backend/**/*.yml,FlowDesk-Backend/**/*.yaml,FlowDesk-Backend/**/*.xml
+alwaysApply: false
+---
+
+# Backend Java
+
+Follow `FlowDesk-Backend/docs/standards/backend.md`.
+
+- Feature packages: `.<feature>/{api,service,repository,dto,entity,mapper,exception}` — not layer-first trees.
+- Controllers return DTOs only (MapStruct). Never entities. Always `ApiResponse<T>`.
+- `@Valid` on DTOs; business rules in services.
+- One `@RestControllerAdvice`; `BaseException` → `ErrorCode`.
+- `@ConfigurationProperties`; secrets from env; no scattered `@Value`.
+- SLF4J + MDC correlation ID. JWT stateless. `@PreAuthorize` for roles. One CORS config.
+- Tests: `@WebMvcTest` / `@DataJpaTest`+Testcontainers / mocked service tests.
+- Side-effect POST: `Idempotency-Key`. Paths `/api/v1/`.
+- Shared envelope/errors in `common-lib` before feature controllers.

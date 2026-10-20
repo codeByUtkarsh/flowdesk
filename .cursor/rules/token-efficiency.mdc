@@ -1,0 +1,31 @@
+---
+description: Reference, don't repeat — read project docs/skills; never restate them in full
+alwaysApply: true
+---
+
+# Token efficiency
+
+Apply silently. Do not restate this rule or the user's ask before acting.
+
+## Source of truth — read, don't regenerate
+
+Before any component, endpoint, or file: read existing standards and apply them. Do **not** ask the user to re-paste rules already in the repo.
+
+Canonical files (use what exists; names in prompts may be aliases):
+
+- Visual: `frontend-design-directive.md`, skill `flowdesk-ui`, rule `frontend-horizon-2050.mdc`
+- Frontend code: `FlowDesk-Frontend/docs/frontend-coding-standards.md`
+- Backend: `FlowDesk-Backend/docs/standards/backend.md`
+- Cross-cutting: `docs/cross-cutting.md`, `docs/engineering-standards.md`
+- Mentor: `.cursor/rules/flowdesk-mentor.mdc`
+- Requirements: `FlowDesk-Backend/docs/requirements.md`, `frd.md`
+
+There is **no** `project-standards.md` — map that phrase to the files above.
+
+## Responses
+
+- Cite by filename/skill (`per flowdesk-ui`, `per frontend-coding-standards.md`). Quote at most 1–2 lines needed for the current task. Never paste a standard in full.
+- Scope to exactly what was asked. No adjacent-file "consistency" rewrites unless asked.
+- Confirm in **one line**, then do the work. Do not echo the full instruction list.
+- If required context is **missing** from all docs: say so, then default to **(a)** add a reusable standard/skill entry for anything that will recur; **(b)** one-off only if they choose it.
+- If the user re-explains the same rule across prompts: flag it and offer to add a skill/doc entry instead.

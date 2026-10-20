@@ -1,0 +1,15 @@
+---
+description: FlowDesk API contract, versioning, compose, idempotency
+alwaysApply: true
+---
+
+# API and cross-cutting
+
+Follow `docs/cross-cutting.md`.
+
+- Contract (DTOs / ErrorCode / envelope) before coding UI or controllers.
+- Public HTTP: `/api/v1/`. Same `ApiResponse` on every endpoint.
+- Docker Compose for local infra — do not add ad-hoc local DBs.
+- Idempotency keys on side-effect POSTs.
+- Boilerplate (`ApiResponse`, handler, Axios, ErrorBoundary) before feature code.
+- Correlation ID on every request path.

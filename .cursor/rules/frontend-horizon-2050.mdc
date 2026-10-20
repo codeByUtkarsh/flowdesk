@@ -1,0 +1,16 @@
+---
+description: FlowDesk Horizon 2050 UI — glass, glow, one 3D moment, not flat SaaS
+globs: FlowDesk-Frontend/**/*.{ts,tsx,css,scss}
+alwaysApply: false
+---
+
+# Horizon 2050 UI
+
+Load this skill when generating UI. Full tokens: repo `frontend-design-directive.md`. Agent skill: `.cursor/skills/flowdesk-ui/SKILL.md`.
+
+- Dark canvas; glassmorphism (blur + translucent + luminous stroke). Real depth on auth via CSS 3D or R3F — not only drop-shadows.
+- Accents: electric cyan + one of violet/plasma pink as **glow/rim**, not large flat fills. Max two hues per screen.
+- Display/geometric headings with tracking; clean body font. Not Inter+indigo SaaS.
+- Motion is functional: load choreography, springs, one cursor-reactive bit. **One** signature 3D/animated moment per screen.
+- Auth = flagship shader/3D + floating glass form. Dashboards = same materials, **no** persistent WebGL behind data.
+- Legible text (scrim/AA). `prefers-reduced-motion`. Degrade 3D on mobile.

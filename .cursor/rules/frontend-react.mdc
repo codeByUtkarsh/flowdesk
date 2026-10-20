@@ -1,0 +1,16 @@
+---
+description: FlowDesk React — feature folders, Axios, Query vs Redux, Zod
+globs: FlowDesk-Frontend/**/*.{ts,tsx,js,jsx}
+alwaysApply: false
+---
+
+# Frontend React
+
+Follow `FlowDesk-Frontend/docs/frontend-coding-standards.md`.
+
+- Features: `src/features/<name>/{components,hooks,api.ts,slice.ts,types.ts}`.
+- One Axios client: auth header, unwrap `ApiResponse`, global errors, 401 refresh.
+- React Query (or RTK Query) = server state. Redux/`useState` = client UI state only.
+- Zod schemas first; `z.infer` for TS types.
+- `ErrorCode` → toast map aligned with backend. Env for API URL — no hardcoded URLs.
+- Scaffold client, ErrorBoundary, mapper before feature screens.

@@ -1,0 +1,28 @@
+name: FlowDesk CI
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  verify:
+    name: mvn verify
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: FlowDesk-Backend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: FlowDesk-Backend/pom.xml
+
+      - name: Run Maven verify
+        run: mvn -B verify
